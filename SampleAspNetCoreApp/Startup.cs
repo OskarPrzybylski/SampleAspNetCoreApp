@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SampleAspNetCoreApp.Models.Database;
 
 namespace SampleAspNetCoreApp
 {
@@ -23,6 +25,9 @@ namespace SampleAspNetCoreApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            var connectionString =
+                @"server=DESKTOP-8IQBTGU;Database=SampleAspNetCoreAppDb;Trusted_Connection=True;";
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
