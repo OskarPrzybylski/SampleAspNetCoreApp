@@ -14,6 +14,7 @@ export class PropertiesService
         return this.propertiesBackendService.addProperty(newProperty);
     }
     getProperty(propertyId: number): Observable<Property> {
+        console.log(propertyId);
         return this.propertiesBackendService.getProperty(propertyId);
     }
     getProperties(): Observable<Property[]> {

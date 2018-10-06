@@ -1,0 +1,57 @@
+﻿<div>
+    <div style="margin-top: 25px">
+        <a (click) ="goBack()" class="btn btn-warning">Go Back</a>
+        <h3>{{pageTitle}}</h3>
+    </div>
+    <div style="margin-top: 25px; margin-bottom: 50px">
+        <form #propertyForm="ngForm" (ngSubmit)="onSubmit(property)">
+            <div class="form-group">
+                <label for="type">type: </label>
+                <select [disabled]="!isInEditMode" required class="form-control" id="type" [(ngModel)]="property.type" name="type" #type="ngModel">
+                    <option></option>
+                    <option value="0">home</option>
+                    <option value="1">flat</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Rooms Amount</label>
+                <input [disabled]="!isInEditMode" id="rooms" name="rooms" type="number" [(ngModel)]="property.rooms" class="form-control" placeholder="rooms amount" />
+            </div>
+            <div class="form-group">
+                <label>Area</label>
+                <input [disabled]="!isInEditMode" id="area" name="area" type="number" [(ngModel)]="property.area" class="form-control" placeholder="area" />
+            </div>
+            <div class="form-group">
+                <label >Washer</label>
+                <select [disabled]="!isInEditMode" required class="form-control" id="washer" [(ngModel)]="property.washer" name="washer">
+                    <option></option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Refrigerator</label>
+                <select [disabled]="!isInEditMode" required class="form-control" id="refrigerator" [(ngModel)]="property.refrigerator" name="refrigerator">
+                    <option></option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Iron</label>
+                <select [disabled]="!isInEditMode" required class="form-control" id="iron" [(ngModel)]="property.iron" name="iron">
+                    <option></option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea [disabled]="!isInEditMode" id="description" name="description" [(ngModel)]="property.description" class="form-control"></textarea>
+            </div>
+            <div *ngIf="isInEditMode">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

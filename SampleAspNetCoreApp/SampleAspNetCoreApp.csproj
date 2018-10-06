@@ -22,16 +22,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\property\properties.component.ts" />
-    <None Remove="ClientApp\app\components\property\services\propertiesservice.ts" />
+    <None Remove="ClientApp\app\components\properties\components\property-details.component.ts" />
+    <None Remove="ClientApp\app\components\properties\properties.component.ts" />
+    <None Remove="ClientApp\app\components\properties\services\propertiesservice.ts" />
     <None Remove="ClientApp\app\models\property.ts" />
     <None Remove="ClientApp\app\services\httppropertiesbackendservice.ts" />
     <None Remove="ClientApp\app\services\propertiesbackendservice.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\property\properties.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\property\services\propertiesservice.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\properties\components\properties.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\properties\components\property-details.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\properties\services\propertiesservice.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\property.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\httppropertiesbackendservice.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\propertiesbackendservice.ts" />

@@ -24,8 +24,12 @@ export class HttpPropertiesBackendService extends PropertiesBackendService {
             JSON.stringify(newProperty), this.jsonContentOptions).map(response => response.json() as number);
     }
 
-    getProperty(id: number): Observable<Property> {
-        return this.http.get(this.getPropertyUrl, JSON.stringify(id)).map(response => response.json() as Property);
+    getProperty(id: number): Observable<Property> {       
+        return this.http.get(this.getPropertyUrl + id, this.jsonContentOptions)
+            .map(response => response.json() as Property);
+       
+ 
+        
     }
 
     getProperties(): Observable<Property[]> {

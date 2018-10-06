@@ -11,10 +11,11 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
 //***PropertiesSection***\\
-import { PropertiesComponent } from "./components/property/properties.component";
-import { PropertiesService } from "./components/property/services/propertiesservice";
+import { PropertiesComponent } from "./components/properties/components/properties.component";
+import { PropertiesService } from "./components/properties/services/propertiesservice";
 import { PropertiesBackendService } from "./services/propertiesbackendservice";
 import { HttpPropertiesBackendService } from "./services/httppropertiesbackendservice";
+import { PropertyDetailsComponent } from "./components/properties/components/property-details.component";
 
 
 
@@ -27,7 +28,8 @@ import { HttpPropertiesBackendService } from "./services/httppropertiesbackendse
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        PropertiesComponent
+        PropertiesComponent,
+        PropertyDetailsComponent
     ],
     imports: [
         CommonModule,
@@ -38,7 +40,10 @@ import { HttpPropertiesBackendService } from "./services/httppropertiesbackendse
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'properties', component: PropertiesComponent},
+            { path: 'properties', component: PropertiesComponent },
+            { path: "properties/new-property", component: PropertyDetailsComponent },
+            { path: "properties/property-details/:id", component: PropertyDetailsComponent },
+            {path: "properties/property-update/:id", component: PropertyDetailsComponent},
             { path: '**', redirectTo: 'home' }
         ])
     ],
