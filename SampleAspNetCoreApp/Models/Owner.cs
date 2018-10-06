@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace SampleAspNetCoreApp.Models
 {
-    public class Owner
+    public class Owner : GenericModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Phone { get; set; }

@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace SampleAspNetCoreApp.Models
 {
-    public class Property
+    public class Property : GenericModel
     {
-        public int Id { get; set; }
         public PropertyType Type { get; set; }
         public string Description { get; set; }
         public int Rooms { get; set; }

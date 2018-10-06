@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace SampleAspNetCoreApp.Models
 {
-    public class Address : GenericModel
+    public abstract class GenericModel
     {
-        public string Street { get; set; }
-        public string City { get; set; }
+        public int Id { get; set; }
     }
 }
